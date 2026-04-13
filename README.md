@@ -12,7 +12,7 @@ npm install
 npm run dev
 ```
 
-Vercel: **Root Directory** = `web`. Set all `NEXT_PUBLIC_*` variables in the project.
+Production: **https://lego-games.vercel.app** — Vercel **Root Directory** = `web`. Set all `NEXT_PUBLIC_*` variables (including `NEXT_PUBLIC_BASE_APP_ID` from [dashboard.base.org](https://dashboard.base.org)).
 
 ## Contract
 

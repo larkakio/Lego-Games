@@ -15,7 +15,7 @@ const mono = JetBrains_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://lego-games.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
