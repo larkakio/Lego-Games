@@ -17,6 +17,11 @@ const mono = JetBrains_Mono({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lego-games.vercel.app";
 
+/** Base App domain verification — must appear in raw HTML; keep fallback if env missing on Vercel. */
+const baseAppId =
+  process.env.NEXT_PUBLIC_BASE_APP_ID?.trim() ||
+  "69dc9f152c63bda05673176a";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Neon Brick Grid",
@@ -29,9 +34,6 @@ export const metadata: Metadata = {
     title: "Neon Brick Grid",
     description: "Swipe the holo grid. Daily check-in on Base.",
     images: ["/thumbnail.jpg"],
-  },
-  other: {
-    "base:app_id": process.env.NEXT_PUBLIC_BASE_APP_ID ?? "",
   },
 };
 
@@ -51,6 +53,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta name="base:app_id" content={baseAppId} />
+      </head>
       <body
         className={`${display.variable} ${mono.variable} min-h-screen bg-[#05060a] font-sans text-slate-200 antialiased`}
       >
